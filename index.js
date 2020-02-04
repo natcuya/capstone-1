@@ -31,19 +31,20 @@ function artistSearch (searchTerm) {
     });
 }
 
-function getTopTracks(mbid1){
+function getTopTracks(searchTerm){
   const params = {
     method: `artist.getTopTracks`,
-    mbid: mbid1,
-    limit: 3
+    //mbid: mbid1,
+    limit: 3,
+    artist: searchTerm
   };
   const queryString = formatQueryParams(params)
-  const  url = searchURL + `&` + queryString;
-  console.log(url);
-    fetch(url)
+  const  url1 = searchURL + `&` + queryString;
+  console.log(url1);
+    fetch(url1)
     .then(response => {
       if (response.ok) {
-      return response.json();
+     return response.json();
       }
       throw new Error(response.statusText);
     })
@@ -52,7 +53,17 @@ function getTopTracks(mbid1){
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }
+//const mbid1= "";
 
+//function displayResults1(responseJson){
+//console.log(responseJson);
+//const mbid1 = responseJson[`artist.mbid`];
+//for (let i = 0; i<responseJson.mbid.toptracks.track.length; i++){
+//$('#results-list').append(`
+ //   <div>
+ //     <h2>${responseJson.toptracks.track[i].name}
+ //    </h2>
+ //  </div>`);}}
 function displayResults (responseJson){
   console.log(responseJson);
   $(`#results-list`).empty();
@@ -63,17 +74,23 @@ function displayResults (responseJson){
       <h2>${responseJson.results.artistmatches.artist[i].name}
       </h2>
       <h3><a href=>"${responseJson.results.artistmatches.artist[i].url}"</a></h3>
+      <h4>${responseJson.results.artistmatches.artist[i].mbid}</h4>
     </div>`);
-    $('#results').removeClass('hidden');
 //});
+
 //console.log(getTopTracks(artist[i].mbid));
-}};
+};
+//const mbid1 = $(responseJson.results.artistmatches.artist);
+$('#results').removeClass('hidden');
+};
 
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     let searchTerm = $('#js-search-term').val();
    artistSearch(searchTerm);
+   getTopTracks(searchTerm);
+  //getTopTracks(results.artist.mbid1);
   });
   
 }
