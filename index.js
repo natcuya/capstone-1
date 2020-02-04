@@ -38,12 +38,12 @@ function getTopTracks(mbid1){
     limit: 3
   };
   const queryString = formatQueryParams(params)
-  const  url2 = searchURL + `&` + queryString;
-  console.log(url2);
-    fetch(url2)
+  const  url = searchURL + `&` + queryString;
+  console.log(url);
+    fetch(url)
     .then(response => {
       if (response.ok) {
-       return displayResults(new1)();
+      return response.json();
       }
       throw new Error(response.statusText);
     })
@@ -56,19 +56,18 @@ function getTopTracks(mbid1){
 function displayResults (responseJson){
   console.log(responseJson);
   $(`#results-list`).empty();
-  for (let i=0;i<responseJson.results.artistmatches.artist.length; i++){
-  //new1.forEach(artist=>{
+  for (let i = 0; i<responseJson.results.artistmatches.artist.length; i++){
+ //responseJson.forEach(artist=>{
     $('#results-list').append(`
     <div>
-      <h2>${responseJson.name}
+      <h2>${responseJson.results.artistmatches.artist[i].name}
       </h2>
-      <h3><a href=>"${responseJson.url}"</a></h3>
+      <h3><a href=>"${responseJson.results.artistmatches.artist[i].url}"</a></h3>
     </div>`);
-  //} 
-  //console.log(getTopTracks(artist.mbid));
-};
-$('#results').removeClass('hidden');
-}
+    $('#results').removeClass('hidden');
+//});
+//console.log(getTopTracks(artist[i].mbid));
+}};
 
 function watchForm() {
   $('form').submit(event => {
