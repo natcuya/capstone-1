@@ -21,8 +21,7 @@ function artistSearch (searchTerm) {
     fetch(url)
     .then(response => {
       if (response.ok) {
-        console.log(response.json())
-        return response.json().results.artistmatches.artist;
+        return response.json();
       }
       throw new Error(response.statusText);
     })
@@ -31,6 +30,59 @@ function artistSearch (searchTerm) {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }
+
+function getTopTracks(mbid1){
+  const params = {
+    method: `artist.getTopTracks`,
+    mbid: mbid1,
+    limit: 3
+  };
+  const queryString = formatQueryParams(params)
+  const  url2 = searchURL + `&` + queryString;
+  console.log(url2);
+    fetch(url2)
+    .then(response => {
+      if (response.ok) {
+       return displayResults(new1)();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => displayResults(responseJson))
+    .catch(err => {
+      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+    });
+}
+
+function displayResults (responseJson){
+  console.log(responseJson);
+  $(`#results-list`).empty();
+  for (let i=0;i<responseJson.results.artistmatches.artist.length; i++){
+  //new1.forEach(artist=>{
+    $('#results-list').append(`
+    <div>
+      <h2>${responseJson.name}
+      </h2>
+      <h3><a href=>"${responseJson.url}"</a></h3>
+    </div>`);
+  //} 
+  //console.log(getTopTracks(artist.mbid));
+};
+$('#results').removeClass('hidden');
+}
+
+function watchForm() {
+  $('form').submit(event => {
+    event.preventDefault();
+    let searchTerm = $('#js-search-term').val();
+   artistSearch(searchTerm);
+  });
+  
+}
+
+$(watchForm);
+
+
+
 //instead of json build an area that contain artist results, 
 //need an array of objects - keys in string
 var exampleObject = [
@@ -53,63 +105,3 @@ var exampleObject = [
     ]
   }
 ]
-
-function displayResults (new1){
-  console.log(new1);
-  $(`#results-list`).empty();
-  new1.forEach(artist=>{
-    console.log(getTopTracks(artist.mbid));
-    $('#results-list').append(`
-    <div>
-      <h2>${artist.name}
-      </h2>
-      <h3><a href=>"${artist.url}"</a></h3>
-    
-    </div>`);
-    $('#results').removeClass('hidden');
-  });
- 
-}
-
-function getTopTracks(mbid1){
-    const params = {
-      method: `artist.getTopTracks`,
-      mbid: mbid1,
-      limit: 3
-    };
-    const queryString = formatQueryParams(params)
-    const  url= searchURL + `&` + queryString;
-    console.log(url);
-      fetch(url)
-      .then(response => {
-        if (response.ok) {
-          console.log(response.json())
-          return response.json();
-
-        }
-        throw new Error(response.statusText);
-      })
-      .then(responseJson => displayResults(responseJson))
-      .catch(err => {
-        $('#js-error-message').text(`Something went wrong: ${err.message}`);
-      });
-  }
-  
-
-//write function that uses mbid 
-
-//function toptracks (){
- // $(`<h3><a href=>"${artist.url}"</a></h3>`).on(`click`, function (){
- //   $(`#results-list`).empty();
- // })}
-
-function watchForm() {
-  $('form').submit(event => {
-    event.preventDefault();
-    let searchTerm = $('#js-search-term').val();
-   artistSearch(searchTerm);
-  });
-  
-}
-
-$(watchForm);
