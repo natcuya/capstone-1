@@ -3,9 +3,17 @@
   }
   
   body {
+    color: white;
     font-family: 'Roboto', sans-serif;
     background: rgb(192, 137, 146);
-
+    background-size: cover;
+    background-image: url('image/cap5.jpg');
+  background-size: cover;
+  text-shadow: 2px  2px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000;
   }
   
   button, input[type="text"] {
