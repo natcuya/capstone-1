@@ -4,8 +4,24 @@
   
   body {
     font-family: 'Roboto', sans-serif;
+    background: rgb(192, 137, 146);
+
   }
   
   button, input[type="text"] {
     padding: 5px;
+    background: lightgray;
   }
+
+  h3{
+      font-size: 15px;
+  }
+
+  .main-result {
+    font-size: 10px;
+
+  }
+
+ label {
+     font-size: 20px;
+ }
