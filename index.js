@@ -1,6 +1,6 @@
 `use strict`;
 
-const apikey1 = `355095-capstone-3NMWSODY`;
+const apikey1 = `355095-capstone-RKTGK7XD`;
 const searchUrl1 = `https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar`;
 
 function formatQueryParams(params) {
@@ -31,7 +31,6 @@ function tasteDive (searchTerm) {
     q: searchTerm,
     type: `music`,
     limit: 3,
-    info: 1,
     k: apikey1,
     verbose: 1,
   };
