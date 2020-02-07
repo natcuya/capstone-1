@@ -2,6 +2,8 @@
 
 const apikey1 = `355095-capstone-RKTGK7XD`;
 const searchUrl1 = `https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar`;
+const apikey2 = `MJ8eaEQisaabRvXpujodDgLMlRdGdGWS`;
+const searchUrl2 = `https://app.ticketmaster.com/discovery/v2/attractions.json`;
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
@@ -9,22 +11,33 @@ function formatQueryParams(params) {
   return queryItems.join('&');
 }
 
-function displayResults2 (responseJson){
+function displayResults1 (responseJson){
   console.log(responseJson);
   $(`#results-list`).empty();
   for (let i = 0; i<responseJson.Similar.Info.length; i++){
-  $('#results-list').append(`<div id="artistSearch"><h2> You searched: ${responseJson.Similar.Info[i].Name}</h2><p>${responseJson.Similar.Info[i].wTeaser}</p><p><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></div>`
-  );}
+  $('#results-list').append(
+    `<div id="result-box">
+      <h2> You searched: ${responseJson.Similar.Info[i].Name}</h2>
+        <p>${responseJson.Similar.Info[i].wTeaser}</p>
+      <div id="flex-cont">
+        <p id= "similar-link"><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}"target="_blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      </div>
+    </div>`);}
   for (let i = 0; i<responseJson.Similar.Results.length; i++){
-    $('#results-list').append(`
-    <div> Similar Artists:
-      <h3>${responseJson.Similar.Results[i].Name}
-      </h3><p>${responseJson.Similar.Results[i].wTeaser}</p>
-      <p><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    $('#results-list0').append(`
+    <div id="result-box1"> 
+    <h2>SIMILAR ARTIST: </h2>
+      <h3>${responseJson.Similar.Results[i].Name}</h3>
+      <h4>BIOGRAPHY<br/></h4>
+        <p>${responseJson.Similar.Results[i].wTeaser}</p>
+      <div id="flex-cont">
+        <p id= "similar-link"><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl}"target="_blank"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      </div>
     </div>`);
 };
 $('#results').removeClass('hidden');
 };
+
 
 function tasteDive (searchTerm) {
   const params = {
@@ -33,8 +46,9 @@ function tasteDive (searchTerm) {
     limit: 3,
     k: apikey1,
     verbose: 1,
+    jsonp: 'callback',
+    dataType: 'jsonp',
   };
-
   const queryString = formatQueryParams(params)
   const  url1= searchUrl1 + `?` + queryString;
   console.log(url1);
@@ -46,23 +60,61 @@ function tasteDive (searchTerm) {
       }
       throw new Error(response.statusText);
     })
-    .then(responseJson => displayResults2(responseJson))
+    .then(responseJson => displayResults1(responseJson))
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
-    
-}
+  }   
 
+  function displayResults2(responseJson){
+    console.log(responseJson);
+    $(`#results-list1`).empty();
+    for (let i = 0; i<responseJson._embedded.attractions.length; i++){
+      $('#results-list1').append(`
+      <div id="result-box2">
+      <h2>CHECK OUT THIS EVENT</h2>
+        <h3>Event Title: ${responseJson._embedded.attractions[i].name}</h3>
+          <p><img src="${responseJson._embedded.attractions[i].images[0].url}" alt="image of artist or event"></p> 
+          <p> Upcoming Events: ${responseJson._embedded.attractions[i].upcomingEvents._total}</p>
+          <p><a href="${responseJson._embedded.attractions[i].url}"target="_blank">Click here for more details about the artist and ticket sales</a></p>
+      </div>`);};
+    $('#results').removeClass('hidden');
+  };
+  
+  function ticketmaster (searchTerm) {
+    const params = {
+      keyword: searchTerm,
+      apikey: apikey2,
+      size: 3
+    };
+  
+    const queryString = formatQueryParams(params)
+    const  url2= searchUrl2 + `?` + queryString;
+    console.log(url2);
+  
+      fetch(url2)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then(responseJson => displayResults2(responseJson))
+      .catch(err => {
+        $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      });
+      
+  }
 
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     let searchTerm = $('#js-search-term').val();
-  // artistSearch(searchTerm);
-  // getTopTracks(searchTerm);
-   tasteDive(searchTerm);
+  ticketmaster(searchTerm);
+  tasteDive(searchTerm);
   });
   
 }
 
 $(watchForm);
+
