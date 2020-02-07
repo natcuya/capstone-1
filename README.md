@@ -1,9 +1,6 @@
 Application Name: Music & Mix
 
 
-
-
-
 Purpose:
 The purpose of this application is to connect the user to upcoming music events/attractions while simultaneously presenting suggested artists/bands the user may also enjoy. 
 The goal is to connect the user to new music experiences. This is achieved by using two popular APIs: TicketMaster and TastDive. 
@@ -22,11 +19,11 @@ Key Technologies Used: Front End
 
 4. jQuery
 
-![](app1.PNG)
-![](app2.PNG)
-![](app3.PNG)
-![](app4.PNG)
-![](app5.PNG)
+![img1](app1.PNG)
+![img2](app2.PNG)
+![img3](app3.PNG)
+![img4](app4.PNG)
+![img5](app5.PNG)
 
 APIs used: 
 
