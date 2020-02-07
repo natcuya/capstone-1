@@ -23,9 +23,13 @@ TicketMaster
 TasteDive
 
 Features: 
+
 Creates a summary of the searched artist entered
+
 Presents a list of new artists/bands similar to the searched artist
+
 Presents a list of events associated with the searched artist
+
 Mobile Friendly 
 
 Demo:
