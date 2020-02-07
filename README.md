@@ -13,12 +13,17 @@ The user is prompted to type in their favorite artist into the search bar. By do
 
 
 Key Technologies Used: Front End
+
 HTML 
+
 CSS
+
 JavaScript
+
 jQuery
 
-APIs used
+APIs used: 
+
 TicketMaster
 TasteDive
 
