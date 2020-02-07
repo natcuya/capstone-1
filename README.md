@@ -1,7 +1,7 @@
 Application Name: Music & Mix
 
 
-Screenshot(s) of your app. This makes your app description much easier to understand.
+
 
 
 Purpose:
@@ -14,13 +14,13 @@ The user is prompted to type in their favorite artist into the search bar. By do
 
 Key Technologies Used: Front End
 
-HTML 
+1. HTML 
 
-CSS
+2. CSS
 
-JavaScript
+3. JavaScript
 
-jQuery
+4. jQuery
 
 APIs used: 
 
