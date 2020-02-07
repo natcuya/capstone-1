@@ -19,11 +19,13 @@ Key Technologies Used: Front End
 
 4. jQuery
 
+Initial page: 
+![img5](image/app5.PNG)
 ![img1](image/app1.PNG)
 ![img2](image/app2.PNG)
 ![img3](image/app3.PNG)
 ![img4](image/app4.PNG)
-![img5](image/app5.PNG)
+
 
 APIs used: 
 
