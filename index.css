@@ -1,36 +1,248 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    background: rgb(192, 137, 146);
-    background-size: cover;
-    background-position: center;
-    background-repeat:no-repeat;
-    background-image: url('image/cap5.jpg');
-  text-shadow: 2px  2px 0 #000,
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(192, 137, 146);
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url('image/cap5.jpg');
+}
+
+.image {
+  height: 100%;
+
+}
+img {
+  width: 100%;
+}
+
+button, input[type="text"] {
+  padding: 5px;
+  background: white;
+  font-size: 15px;
+}
+#js-button {
+ font-size: 15px;
+ background: white;
+ background-image: linear-gradient(white,lightgray);
+}
+
+h3{
+    font-size: 15px;
+}
+
+.main-result {
+  font-size: 15px;
+
+}
+
+body p {
+background-color: rgb(192, 137, 146);
+ padding: 1px;
+ margin: 5px;
+ text-align: center;
+}
+
+.js-error-message{
+ border: none;
+}
+header{
+ background-color: rgb(192, 137, 146);
+ padding: 3px;
+ margin: 5px;
+ text-align: center;
+ text-transform: uppercase;
+ border: 3px solid rgba(255, 255, 255, 0.822);
+}
+header h2 {
+ font-size: 15px;
+}
+
+#js-form{
+margin: 20px;
+font-size: 40px;
+text-align: center;
+}
+
+label {
+ font-size: 30px;
+ text-shadow: 2px  2px 0 rgb(36, 35, 35),
+-1px -1px 0 #000,  
+ 1px -1px 0 #000,
+-1px  1px 0 #000,
+ 1px  1px 0 #000;
+
+}
+
+#flex-cont {
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+margin-bottom: 50px;
+}
+
+#flex-cont iframe {
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+#result-box, #result-box1, #result-box2 {
+  margin: 8px;
+  margin-bottom: 30px;
+}
+#result-box p {
+  text-align: left;
+  margin-bottom: 40px;
+   
+}
+#result-box1 p {
+  text-align: left;
+}
+#result-box h2 {
+  text-transform: uppercase;
+  text-align: left;
+  text-shadow: 2px  2px 0 rgb(36, 35, 35),
   -1px -1px 0 #000,  
    1px -1px 0 #000,
   -1px  1px 0 #000,
    1px  1px 0 #000;
-  }
+}
+#result-box1 h2, #result-box2 h2 {
+  font-size: 25px;
+  margin-top: 30px;
+
+}
+#result-box2 p {
+  text-align: left;
+  background-color: grey;
+  font-size: 18px;
   
+}
+#results-list1 {
+  background-color: grey;
+}
+
+#results-list, #results-list0{
+  border: 3px solid rgba(255, 255, 255, 0.822);
+}
+
+#result-box h3, #result-box1 h3{
+  font-size: 30px;
+  text-decoration: underline;
+  text-shadow: 2px  2px 0 rgb(36, 35, 35),
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000;
+}
+#result-box2 h3 {
+  text-align: left;
+  font-size: 20px;
+  text-shadow: 2px  2px 0 rgb(36, 35, 35),
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000;
+}
+
+h4 {
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 700px) {
+  #js-button {
+    font-size: 30px;
+  }
+  header h2 {
+    font-size: 25px;
+   }
+   h1{
+     font-size: 50px;
+   }
+   #result-box1 h2,
+   #result-box h2,#result-box2 h2 {
+     font-size: 30px;
+   }
+   #result-box h3, #result-box1 h3,#result-box2 h3{
+    font-size: 40px;
+  }
+  #result-box p, #result-box1 p, #result-box2 p {
+    font-size: 25px;
+  }
+  #js-button {
+    font-size: 20px;
+  margin: 20px;
+  }
   button, input[type="text"] {
     padding: 5px;
-    background: lightgray;
+    background: white;
+    font-size: 30px;
   }
-
-  h3{
-      font-size: 15px;
+  label {
+    font-size: 40px;
+    margin: 20px;
   }
-
-  .main-result {
-    font-size: 10px;
-
+  h4{
+    font-size: 25px;
   }
+  #result-box, #result-box1, #result-box2 {
+    margin: 20px;
+    margin-bottom: 50px;
+  }
+  a {
+    font-size: 25px;
+  }
+}
 
- label {
-     font-size: 20px;
- }
+
+@media screen and (min-width: 800px){
+  header h2 {
+    font-size: 25px;
+   }
+   h1{
+     font-size: 50px;
+   }
+   #result-box1 h2,
+   #result-box h2,#result-box2 h2 {
+     font-size: 40px;
+   }
+   #result-box h3, #result-box1 h3,#result-box2 h3{
+    font-size: 50px;
+  }
+  #result-box p, #result-box1 p, #result-box2 p {
+    font-size: 40px;
+  }
+  #js-button {
+    font-size: 40px;
+  margin: 20px;
+  }
+  button, input[type="text"] {
+    padding: 5px;
+    background: white;
+    font-size: 40px;
+  }
+  label {
+    font-size: 50px;
+    margin: 20px;
+  }
+  h4{
+    font-size: 35px;
+  }
+  #result-box, #result-box1, #result-box2 {
+    margin: 20px;
+    margin-bottom: 50px;
+  }
+  a {
+    font-size: 35px;
+  }
+}
