@@ -13,8 +13,12 @@ function formatQueryParams(params) {
 
 function displayResults1 (responseJson){
   console.log(responseJson);
+  //set to empty any previous results from results-list
   $(`#results-list`).empty();
+  //iterates through the info array within the "similar" object
+  //the similar object holds data of artists,books,etc from TasteDive API
   for (let i = 0; i<responseJson.Similar.Info.length; i++){
+  //For each result searched, artist info, youtube link, and description will be listed.
   $('#results-list').append(
     `<div id="result-box">
       <h2> You searched: ${responseJson.Similar.Info[i].Name}</h2>
@@ -23,6 +27,7 @@ function displayResults1 (responseJson){
         <p id= "similar-link"><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}"target="_blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
       </div>
     </div>`);}
+  //for each artist listed as similar, artist info, name, youtube link and description will be listed.
   for (let i = 0; i<responseJson.Similar.Results.length; i++){
     $('#results-list0').append(`
     <div id="result-box1"> 
@@ -40,6 +45,7 @@ $('#results').removeClass('hidden');
 
 
 function tasteDive (searchTerm) {
+  //setting the parameters necessary to retrieve the data 
   const params = {
     q: searchTerm,
     type: `music`,
@@ -69,6 +75,7 @@ function tasteDive (searchTerm) {
   function displayResults2(responseJson){
     console.log(responseJson);
     $(`#results-list1`).empty();
+    //for each attraction, the name, an image, upcoming event (num), and URL to ticketmaster page will be listed.
     for (let i = 0; i<responseJson._embedded.attractions.length; i++){
       $('#results-list1').append(`
       <div id="result-box2">
@@ -105,11 +112,12 @@ function tasteDive (searchTerm) {
       });
       
   }
-
+//watches for submission
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     let searchTerm = $('#js-search-term').val();
+  //captures value of users input in searchbar
   ticketmaster(searchTerm);
   tasteDive(searchTerm);
   });
