@@ -37,8 +37,7 @@ Events Listed under key search:
 
 APIs used: 
 
-TicketMaster
-TasteDive
+TicketMasterand TasteDive
 
 Features: 
 
