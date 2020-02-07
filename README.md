@@ -1,4 +1,4 @@
-Application Name: Music & Mix
+Application Name: Music & Mix Web App
 
 
 Purpose:
@@ -21,10 +21,14 @@ Key Technologies Used: Front End
 
 Initial page: 
 ![img5](image/app5.PNG)
+Page when item is searched: Artist Info
+![img4](image/app4.PNG)
+Similar Artist Section:
 ![img1](image/app1.PNG)
 ![img2](image/app2.PNG)
+Events Listed under jey search: 
 ![img3](image/app3.PNG)
-![img4](image/app4.PNG)
+
 
 
 APIs used: 
