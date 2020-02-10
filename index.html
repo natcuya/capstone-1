@@ -16,16 +16,15 @@
 </header>
 <form id="js-form">
     <label for="search-term">Search Artist </label><br/>
-     <input type="text" name="search-term" id="js-search-term" required><br/>
-     <button type="submit" id="js-button">Submit</button>
+    <input type="text" name="search-term" id="search-term" required placeholder="i.e. Beyonce"><br/>
+    <button type="submit" id="js-button">Submit</button>
 </form>
-     <div id="js-error-message" class="error-message"></div>
-        <section id="results" class="hidden">
-          <p id="results-list"></p>
-          <p id="results-list0"></p>
-          <p id="results-list1"></p>
-        </section>
-    </div>
+    <section id="results" class="hidden">
+          <div id="results-list"></div>
+          <div id="results-list0"></div>
+          <div id="results-list1"></div>
+     </section>
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="index.js"></script>
 </body>
