@@ -10,14 +10,20 @@ function formatQueryParams(params) {
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
   return queryItems.join('&');
 }
-
 function displayResults1 (responseJson){
-  console.log(responseJson);
   //set to empty any previous results from results-list
   $(`#results-list`).empty();
+  console.log(responseJson);
+  if (responseJson.Similar.Results.length === 0) {
+    $('#results-list').append(
+     `<div id="result-box">
+       <h2> No result found, try a different artist.</h2>
+      </div>`);
+    return;
+  }
   //iterates through the info array within the "similar" object
   //the similar object holds data of artists,books,etc from TasteDive API
-  for (let i = 0; i<responseJson.Similar.Info.length; i++){
+for (let i = 0; i<responseJson.Similar.Info.length; i++){
   //For each result searched, artist info, youtube link, and description will be listed.
   $('#results-list').append(
     `<div id="result-box">
@@ -26,7 +32,8 @@ function displayResults1 (responseJson){
       <div id="flex-cont">
         <p id= "similar-link"><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}"target="_blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
       </div>
-    </div>`);}
+    </div>`);
+}
   //for each artist listed as similar, artist info, name, youtube link and description will be listed.
   for (let i = 0; i<responseJson.Similar.Results.length; i++){
     $('#results-list0').append(`
@@ -42,8 +49,6 @@ function displayResults1 (responseJson){
 };
 $('#results').removeClass('hidden');
 };
-
-
 function tasteDive (searchTerm) {
   //setting the parameters necessary to retrieve the data 
   const params = {
@@ -64,12 +69,9 @@ function tasteDive (searchTerm) {
       if (response.ok) {
         return response.json();
       }
-      throw new Error(response.statusText);
+      throw new Error("sorry no results");
     })
     .then(responseJson => displayResults1(responseJson))
-    .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
-    });
   }   
 
   function displayResults2(responseJson){
@@ -94,11 +96,9 @@ function tasteDive (searchTerm) {
       apikey: apikey2,
       size: 3
     };
-  
     const queryString = formatQueryParams(params)
     const  url2= searchUrl2 + `?` + queryString;
     console.log(url2);
-  
       fetch(url2)
       .then(response => {
         if (response.ok) {
@@ -106,23 +106,17 @@ function tasteDive (searchTerm) {
         }
         throw new Error(response.statusText);
       })
-      .then(responseJson => displayResults2(responseJson))
-      .catch(err => {
-        $('#js-error-message').text(`Something went wrong: ${err.message}`);
-      });
-      
+      .then(responseJson => displayResults2(responseJson)) 
   }
 //watches for submission
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
-    let searchTerm = $('#js-search-term').val();
+    let searchTerm = $('#search-term').val();
   //captures value of users input in searchbar
   ticketmaster(searchTerm);
   tasteDive(searchTerm);
   });
-  
 }
 
 $(watchForm);
-
