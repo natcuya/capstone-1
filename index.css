@@ -41,6 +41,8 @@ h3{
 
 }
 
+
+
 body p {
 background-color: rgb(192, 137, 146);
  padding: 1px;
@@ -48,9 +50,7 @@ background-color: rgb(192, 137, 146);
  text-align: center;
 }
 
-.js-error-message{
- border: none;
-}
+
 header{
  background-color: rgb(192, 137, 146);
  padding: 3px;
@@ -94,13 +94,22 @@ height:100%;
 width:100%;
 position:absolute;
 }
+#result-box, #result-box1{
+  background-color: rgb(192, 137, 146);
+
+}
 #result-box, #result-box1, #result-box2 {
   margin: 8px;
   margin-bottom: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.822);
+}
+#result-box2{
+background-color: grey;
 }
 #result-box p {
   text-align: left;
   margin-bottom: 40px;
+  margin: 20px;
    
 }
 #result-box1 p {
@@ -109,6 +118,7 @@ position:absolute;
 #result-box h2 {
   text-transform: uppercase;
   text-align: left;
+  margin: 20px;
   text-shadow: 2px  2px 0 rgb(36, 35, 35),
   -1px -1px 0 #000,  
    1px -1px 0 #000,
@@ -118,24 +128,23 @@ position:absolute;
 #result-box1 h2, #result-box2 h2 {
   font-size: 25px;
   margin-top: 30px;
+  margin: 20px;
 
 }
 #result-box2 p {
   text-align: left;
   background-color: grey;
   font-size: 18px;
-  
-}
-#results-list1 {
-  background-color: grey;
+  margin: 20px;
 }
 
-#results-list, #results-list0{
-  border: 3px solid rgba(255, 255, 255, 0.822);
+#results {
+  
 }
 
 #result-box h3, #result-box1 h3{
   font-size: 30px;
+  margin: 20px;
   text-decoration: underline;
   text-shadow: 2px  2px 0 rgb(36, 35, 35),
   -1px -1px 0 #000,  
@@ -145,6 +154,7 @@ position:absolute;
 }
 #result-box2 h3 {
   text-align: left;
+  margin: 20px;
   font-size: 20px;
   text-shadow: 2px  2px 0 rgb(36, 35, 35),
   -1px -1px 0 #000,  
@@ -156,6 +166,8 @@ position:absolute;
 h4 {
   text-align: left;
   margin-top: 8px;
+  margin: 10px;
+  font-style: italic;
   margin-bottom: 8px;
 }
 
@@ -178,6 +190,7 @@ h4 {
   }
   #result-box p, #result-box1 p, #result-box2 p {
     font-size: 25px;
+    margin: 20px;
   }
   #js-button {
     font-size: 20px;
@@ -210,20 +223,23 @@ h4 {
     font-size: 25px;
    }
    h1{
-     font-size: 50px;
+     font-size: 40px;
    }
+ 
    #result-box1 h2,
    #result-box h2,#result-box2 h2 {
      font-size: 40px;
+     margin: 40px;
    }
    #result-box h3, #result-box1 h3,#result-box2 h3{
-    font-size: 50px;
+    font-size: 25px;
+    margin: 40px;
   }
   #result-box p, #result-box1 p, #result-box2 p {
-    font-size: 40px;
+    font-size: 20px;
   }
   #js-button {
-    font-size: 40px;
+  font-size: 30px;
   margin: 20px;
   }
   button, input[type="text"] {
@@ -237,12 +253,47 @@ h4 {
   }
   h4{
     font-size: 35px;
+    margin: 40px;
   }
   #result-box, #result-box1, #result-box2 {
-    margin: 20px;
+    margin: 40px;
     margin-bottom: 50px;
   }
   a {
-    font-size: 35px;
+    font-size: 20px;
+    margin: 0px;
   }
+  #flex-cont {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    margin:40px;
+    margin-bottom: 50px;
+    }
+
+  #flex-cont iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:90%;
+    position:absolute;
+    }
+
+    #result-box, #result-box1, #result-box2 {
+      margin: 8px;
+      margin-bottom: 30px;
+    }
+    .image {
+      height: 80%;
+    
+    }
+    img {
+      margin:40px;
+      width: 80%;
+    }
+    body p {
+      margin: 30px;
+    }
 }
+
