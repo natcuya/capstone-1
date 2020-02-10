@@ -85,6 +85,7 @@ function tasteDive (searchTerm) {
         <h3>Event Title: ${responseJson._embedded.attractions[i].name}</h3>
           <p><img src="${responseJson._embedded.attractions[i].images[0].url}" alt="image of artist or event"></p> 
           <p> Upcoming Events: ${responseJson._embedded.attractions[i].upcomingEvents._total}</p>
+          <p>Follow on Instagram:  <a href="${responseJson._embedded.attractions[i].externalLinks.instagram[0].url}"target="_blank"><i class="fab fa-instagram"></i></a></p>
           <p><a href="${responseJson._embedded.attractions[i].url}"target="_blank">Click here for more details about the artist and ticket sales</a></p>
       </div>`);};
     $('#results').removeClass('hidden');
