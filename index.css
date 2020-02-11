@@ -79,7 +79,7 @@ label {
 
 }
 
-#flex-cont {
+#flex-cont, #flex-cont {
 overflow:hidden;
 padding-bottom:56.25%;
 position:relative;
@@ -87,7 +87,7 @@ height:0;
 margin-bottom: 50px;
 }
 
-#flex-cont iframe {
+#flex-cont iframe, #flex-cont1 iframe{
 left:0;
 top:0;
 height:100%;
@@ -138,9 +138,6 @@ background-color: grey;
   margin: 20px;
 }
 
-#results {
-  
-}
 
 #result-box h3, #result-box1 h3{
   font-size: 30px;
@@ -263,7 +260,7 @@ h4 {
     font-size: 20px;
     margin: 0px;
   }
-  #flex-cont {
+  #flex-cont, #flex-cont1 {
     overflow:hidden;
     padding-bottom:56.25%;
     position:relative;
@@ -272,7 +269,7 @@ h4 {
     margin-bottom: 50px;
     }
 
-  #flex-cont iframe {
+  #flex-cont iframe, #flex-cont1 iframe {
     left:0;
     top:0;
     height:100%;
