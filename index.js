@@ -30,7 +30,7 @@ for (let i = 0; i<responseJson.Similar.Info.length; i++){
       <h2> You searched: ${responseJson.Similar.Info[i].Name}</h2>
         <p>${responseJson.Similar.Info[i].wTeaser}</p>
       <div id="flex-cont">
-        <p id= "similar-link"><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}"target="_blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        <p><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
       </div>
     </div>`);
 }
@@ -42,8 +42,8 @@ for (let i = 0; i<responseJson.Similar.Info.length; i++){
       <h3>${responseJson.Similar.Results[i].Name}</h3>
       <h4>BIOGRAPHY<br/></h4>
         <p>${responseJson.Similar.Results[i].wTeaser}</p>
-      <div id="flex-cont">
-        <p id= "similar-link"><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl}"target="_blank"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <div id="flex-cont1">
+        <p><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
       </div>
     </div>`);
 };
