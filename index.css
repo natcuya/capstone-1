@@ -41,8 +41,6 @@ h3{
 
 }
 
-
-
 body p {
 background-color: rgb(192, 137, 146);
  padding: 1px;
@@ -79,7 +77,7 @@ label {
 
 }
 
-#flex-cont, #flex-cont1 {
+.flex-cont, .flex-cont1 {
 overflow:hidden;
 padding-bottom:56.25%;
 position:relative;
@@ -87,35 +85,35 @@ height:0;
 margin-bottom: 50px;
 }
 
-#flex-cont iframe, #flex-cont1 iframe{
+.flex-cont iframe, .flex-cont1 iframe{
 left:0;
 top:0;
 height:100%;
 width:100%;
 position:absolute;
 }
-#result-box, #result-box1{
+.result-box, .result-box1{
   background-color: rgb(192, 137, 146);
 
 }
-#result-box, #result-box1, #result-box2 {
+.result-box, .result-box1, .result-box2 {
   margin: 8px;
   margin-bottom: 30px;
   border: 3px solid rgba(255, 255, 255, 0.822);
 }
-#result-box2{
+.result-box2{
 background-color: grey;
 }
-#result-box p {
+.result-box p {
   text-align: left;
   margin-bottom: 40px;
   margin: 20px;
    
 }
-#result-box1 p {
+.result-box1 p {
   text-align: left;
 }
-#result-box h2 {
+.result-box h2 {
   text-transform: uppercase;
   text-align: left;
   margin: 20px;
@@ -125,13 +123,13 @@ background-color: grey;
   -1px  1px 0 #000,
    1px  1px 0 #000;
 }
-#result-box1 h2, #result-box2 h2 {
+.result-box1 h2, .result-box2 h2 {
   font-size: 25px;
   margin-top: 30px;
   margin: 20px;
 
 }
-#result-box2 p {
+.result-box2 p {
   text-align: left;
   background-color: grey;
   font-size: 18px;
@@ -139,7 +137,7 @@ background-color: grey;
 }
 
 
-#result-box h3, #result-box1 h3{
+.result-box h3, .result-box1 h3{
   font-size: 30px;
   margin: 20px;
   text-decoration: underline;
@@ -149,7 +147,7 @@ background-color: grey;
   -1px  1px 0 #000,
    1px  1px 0 #000;
 }
-#result-box2 h3 {
+.result-box2 h3 {
   text-align: left;
   margin: 20px;
   font-size: 20px;
@@ -178,14 +176,14 @@ h4 {
    h1{
      font-size: 50px;
    }
-   #result-box1 h2,
-   #result-box h2,#result-box2 h2 {
+   .result-box1 h2,
+   .result-box h2,.result-box2 h2 {
      font-size: 30px;
    }
-   #result-box h3, #result-box1 h3,#result-box2 h3{
+   .result-box h3, .result-box1 h3,.result-box2 h3{
     font-size: 40px;
   }
-  #result-box p, #result-box1 p, #result-box2 p {
+  .result-box p, .result-box1 p, .result-box2 p {
     font-size: 25px;
     margin: 20px;
   }
@@ -205,7 +203,7 @@ h4 {
   h4{
     font-size: 25px;
   }
-  #result-box, #result-box1, #result-box2 {
+  .result-box, .result-box1, .result-box2 {
     margin: 20px;
     margin-bottom: 50px;
   }
@@ -222,17 +220,20 @@ h4 {
    h1{
      font-size: 40px;
    }
- 
-   #result-box1 h2,
-   #result-box h2,#result-box2 h2 {
+ #results {
+  width:60%;
+  margin-left: 20%;
+ }
+   .result-box1 h2,
+   .result-box h2,.result-box2 h2 {
      font-size: 40px;
      margin: 40px;
    }
-   #result-box h3, #result-box1 h3,#result-box2 h3{
+   .result-box h3, .result-box1 h3,.result-box2 h3{
     font-size: 25px;
     margin: 40px;
   }
-  #result-box p, #result-box1 p, #result-box2 p {
+  .result-box p, .result-box1 p, .result-box2 p {
     font-size: 20px;
   }
   #js-button {
@@ -252,7 +253,7 @@ h4 {
     font-size: 35px;
     margin: 40px;
   }
-  #result-box, #result-box1, #result-box2 {
+  .result-box, .result-box1, .result-box2 {
     margin: 40px;
     margin-bottom: 50px;
   }
@@ -260,24 +261,23 @@ h4 {
     font-size: 20px;
     margin: 0px;
   }
-  #flex-cont, #flex-cont1 {
+  .flex-cont, .flex-cont1 {
     overflow:hidden;
     padding-bottom:56.25%;
     position:relative;
     height:0;
-    margin:40px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     }
 
-  #flex-cont iframe, #flex-cont1 iframe {
+  .flex-cont iframe, .flex-cont1 iframe {
     left:0;
     top:0;
     height:100%;
-    width:90%;
+    width:100%;
     position:absolute;
     }
 
-    #result-box, #result-box1, #result-box2 {
+    .result-box, .result-box1, .result-box2 {
       margin: 8px;
       margin-bottom: 30px;
     }
@@ -286,10 +286,12 @@ h4 {
     
     }
     img {
-      margin:40px;
-      width: 80%;
+      margin-left:10px;
+      width: 40%;
+      height: 40%;
     }
     body p {
       margin: 30px;
     }
 }
+
