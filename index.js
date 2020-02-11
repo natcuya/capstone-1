@@ -16,7 +16,7 @@ function displayResults1 (responseJson){
   console.log(responseJson);
   if (responseJson.Similar.Results.length === 0) {
     $('#results-list').append(
-     `<div id="result-box">
+     `<div class="result-box">
        <h2> No result found, try a different artist.</h2>
       </div>`);
     return;
@@ -26,24 +26,24 @@ function displayResults1 (responseJson){
 for (let i = 0; i<responseJson.Similar.Info.length; i++){
   //For each result searched, artist info, youtube link, and description will be listed.
   $('#results-list').append(
-    `<div id="result-box">
+    `<div class="result-box">
       <h2> You searched: ${responseJson.Similar.Info[i].Name}</h2>
         <p>${responseJson.Similar.Info[i].wTeaser}</p>
-      <div id="flex-cont">
-        <p><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <div class="flex-cont">
+        <p><iframe width="560" height="315" src="${responseJson.Similar.Info[i].yUrl}" allow="autoplay; encrypted-media;" allowfullscreen></iframe></p>
       </div>
     </div>`);
 }
   //for each artist listed as similar, artist info, name, youtube link and description will be listed.
   for (let i = 0; i<responseJson.Similar.Results.length; i++){
     $('#results-list0').append(`
-    <div id="result-box1"> 
+    <div class="result-box1"> 
     <h2>SIMILAR ARTIST: </h2>
       <h3>${responseJson.Similar.Results[i].Name}</h3>
       <h4>BIOGRAPHY<br/></h4>
         <p>${responseJson.Similar.Results[i].wTeaser}</p>
-      <div id="flex-cont1">
-        <p><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl}allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <div class="flex-cont1">
+        <p><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl}" allowfullscreen></iframe></p>
       </div>
     </div>`);
 };
@@ -80,12 +80,11 @@ function tasteDive (searchTerm) {
     //for each attraction, the name, an image, upcoming event (num), and URL to ticketmaster page will be listed.
     for (let i = 0; i<responseJson._embedded.attractions.length; i++){
       $('#results-list1').append(`
-      <div id="result-box2">
-      <h2>CHECK OUT THIS EVENT</h2>
-        <h3>Event Title: ${responseJson._embedded.attractions[i].name}</h3>
+      <div class="result-box2">
+        <h2>Event Title: ${responseJson._embedded.attractions[i].name}</h2>
           <p><img src="${responseJson._embedded.attractions[i].images[0].url}" alt="image of artist or event"></p> 
           <p> Upcoming Events: ${responseJson._embedded.attractions[i].upcomingEvents._total}</p>
-          <p>Follow on Instagram:  <a href="${responseJson._embedded.attractions[i].externalLinks.instagram[0].url}"target="_blank"><i class="fab fa-instagram"></i></a></p>
+          <p> Follow on Instagram:  <a href="${responseJson._embedded.attractions[i].externalLinks.instagram[0].url}"target="_blank"><i class="fab fa-instagram"></i></a></p>
           <p><a href="${responseJson._embedded.attractions[i].url}"target="_blank">Click here for more details about the artist and ticket sales</a></p>
       </div>`);};
     $('#results').removeClass('hidden');
