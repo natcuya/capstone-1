@@ -43,7 +43,7 @@ for (let i = 0; i<responseJson.Similar.Info.length; i++){
       <h4>BIOGRAPHY<br/></h4>
         <p>${responseJson.Similar.Results[i].wTeaser}</p>
       <div id="flex-cont1">
-        <p><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        <p><iframe width="560" height="315" src="${responseJson.Similar.Results[i].yUrl}allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
       </div>
     </div>`);
 };
