@@ -18,7 +18,7 @@ body {
 
 }
 img {
-  width: 100%;
+  width: 60%;
 }
 
 button, input[type="text"] {
@@ -88,7 +88,6 @@ overflow:hidden;
 padding-bottom:56.25%;
 position:relative;
 height:0;
-margin-bottom: 50px;
 }
 
 .flex-cont iframe, .flex-cont1 iframe{
@@ -104,25 +103,22 @@ position:absolute;
 }
 .result-box, .result-box1, .result-box2 {
   margin: 8px;
-  margin-bottom: 30px;
   border: 3px solid rgba(255, 255, 255, 0.822);
 }
 .result-box2{
 background-color: grey;
 }
-.result-box p {
+.result-box p, .result-box1 p {
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   margin: 20px;
+  font-size: 10px;
    
-}
-.result-box1 p {
-  text-align: left;
 }
 .result-box h2 {
   text-transform: uppercase;
   text-align: left;
-  margin: 20px;
+  margin: 10px;
   text-shadow: 2px  2px 0 rgb(36, 35, 35),
   -1px -1px 0 #000,  
    1px -1px 0 #000,
@@ -130,28 +126,26 @@ background-color: grey;
    1px  1px 0 #000;
 }
 .result-box1 h2, .result-box2 h2 {
-  font-size: 25px;
-  margin-top: 30px;
-  margin: 20px;
+  font-size: 15px;
+  margin-top: 10px;
+  margin: 10px;
 
 }
 .result-box2 p {
   text-align: left;
   background-color: grey;
-  font-size: 18px;
-  margin: 20px;
+  font-size: 10px;
+  margin: 10px;
 }
-
-
 .result-box h3, .result-box1 h3{
-  font-size: 30px;
-  margin: 20px;
-  text-decoration: underline;
+  font-size: 15px;
+  margin-left: 50px;
+  margin: 8px;
   text-shadow: 2px  2px 0 rgb(36, 35, 35),
-  -1px -1px 0 #000,  
-   1px -1px 0 #000,
-  -1px  1px 0 #000,
-   1px  1px 0 #000;
+-1px -1px 0 #000,  
+ 1px -1px 0 #000,
+-1px  1px 0 #000,
+ 1px  1px 0 #000;
 }
 .result-box2 h3 {
   text-align: left;
@@ -167,9 +161,9 @@ background-color: grey;
 h4 {
   text-align: left;
   margin-top: 8px;
-  margin: 10px;
+  margin: 8px;
+  font-size: 10px;
   font-style: italic;
-  margin-bottom: 8px;
 }
 
 @media only screen and (min-width: 700px) {
@@ -188,18 +182,19 @@ h4 {
    }
    .result-box1 h2,
    .result-box h2,.result-box2 h2 {
-     font-size: 30px;
+     font-size: 20px;
    }
    .result-box h3, .result-box1 h3,.result-box2 h3{
-    font-size: 40px;
+    font-size: 20px;
   }
   .result-box p, .result-box1 p, .result-box2 p {
-    font-size: 20px;
-    margin: 20px;
+    font-size: 10px;
+    margin: 10px;
+    margin-top:0px;
   }
   #js-button {
     font-size: 20px;
-  margin: 20px;
+    margin: 20px;
   }
   button, input[type="text"] {
     padding: 5px;
@@ -220,6 +215,29 @@ h4 {
   a {
     font-size: 25px;
   }
+  .image {
+    height: 80%;
+  
+  }
+  img {
+    margin-left:10px;
+    width: 40%;
+    height: 40%;
+  }
+  .flex-cont, .flex-cont1 {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+
+  .flex-cont iframe, .flex-cont1 iframe {
+    left:50px;
+    top:0;
+    height:80%;
+    width:80%;
+    position:absolute;
+    }
 }
 
 
@@ -236,11 +254,12 @@ h4 {
  }
    .result-box1 h2,
    .result-box h2,.result-box2 h2 {
-     font-size: 40px;
-     margin: 40px;
+     font-size: 30px;
+     margin: 20px;
    }
    .result-box h3, .result-box1 h3,.result-box2 h3{
     font-size: 25px;
+    margin-left: 20px;
   }
   .result-box p, .result-box1 p, .result-box2 p {
     font-size: 20px;
@@ -264,7 +283,7 @@ h4 {
   }
   .result-box, .result-box1, .result-box2 {
     margin: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 8px;
   }
   a {
     font-size: 20px;
@@ -275,20 +294,19 @@ h4 {
     padding-bottom:56.25%;
     position:relative;
     height:0;
-    margin-bottom: 30px;
     }
 
   .flex-cont iframe, .flex-cont1 iframe {
-    left:0;
+    left:50px;
     top:0;
-    height:100%;
-    width:100%;
+    height:80%;
+    width:80%;
     position:absolute;
     }
 
     .result-box, .result-box1, .result-box2 {
       margin: 8px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
     .image {
       height: 80%;
