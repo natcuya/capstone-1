@@ -65,7 +65,6 @@ function tasteDive (searchTerm) {
   };
   const queryString = formatQueryParams(params)
   const  url1= tasteDiveUrl + `?` + queryString;
-  console.log(url1);
     fetch(url1)
     .then(response => {
       if (response.ok) {
@@ -76,12 +75,10 @@ function tasteDive (searchTerm) {
     .then(responseJson => displayResults1(responseJson))
     .catch(error => {
       console.log(error);
-      return error;
     });
 } 
    
 function displayResults2(responseJson){
-    console.log(responseJson);
     $(`#results-list1`).empty();
     //for each attraction, the name, an image, upcoming event (num), and URL to ticketmaster page will be listed.
     for (let i = 0; i<responseJson._embedded.attractions.length; i++){
@@ -103,7 +100,6 @@ function ticketmaster (searchTerm) {
       };
   const queryString = formatQueryParams(params)
   const  url2= ticketmasterUrl + `?` + queryString;
-  console.log(url2);
     fetch(url2)
     .then(response => {
       if (response.ok) {
@@ -111,7 +107,10 @@ function ticketmaster (searchTerm) {
       }
       throw new Error(response.statusText);
       })
-    .then(responseJson => displayResults2(responseJson)) 
+    .then(responseJson => displayResults2(responseJson))
+    .catch(error => {
+      console.log(error);
+    }); 
 }
 
 //watches for submission
